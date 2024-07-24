@@ -123,6 +123,7 @@
             $('#chat-input').val('A message has been sent. Please wait for a response.');
 
             // Disable the chat input and the submit button
+            $('#chat-form').addClass('is-loading');
             $('#chat-input').prop('disabled', true);
             $('#chat-submit').prop('disabled', true);
 

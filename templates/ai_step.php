@@ -17,15 +17,15 @@ function render_progress_bar($step) {
     ?>
 
     <div class="owcpc_steps__container">
-        <div class="mt-5 container-fluid">
-            <div class="row">
+        <div class="container-fluid">
+            <!-- <div class="row">
                 <div class="col">
                     <div class="progress">
                         <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $progress_width; ?>%;"
                             aria-valuenow="<?php echo $step; ?>" aria-valuemin="0" aria-valuemax="3"></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
 
             <div class="row justify-content-between mt-3">

@@ -1,6 +1,18 @@
 /*******************
  HEADER NAV
 *******************/
+@keyframes pulseGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
 #field_45_37 .gchoice{
     width: 33%;
     display: inline-block;
@@ -8,10 +20,42 @@
 /* a {
     color: #e60c0c;
 } */
+.owcp .gform_wrapper.gravity-theme .gf_progressbar_percentage.percentbar_green{
+    background-color: rgba(25,135,84,1) !important;
+}
+.owcp .ginput_container_radio .gfield_radio .gchoice input{
+    background-color: #8E8D8D !important;
+}
+.owcp .gform_page_footer input[type="submit"]{
+    font-size: 14px !important;
+    margin-top: 0 !important;
+    /* text-transform: capitalize; */
+    font-weight: bold !important;
+    min-width: 150px !important;
+}
+.owcpc_steps__container .mt-2{
+    margin-bottom: 12px;
+}
+.owcpc_steps__container h5{
+    font-size: 18px !important;
+}
+.owcpc_steps__container p{
+    line-height: 1.3rem;
+}
 
-.agaurd-vault-body {
-    padding: 0 0 100px !important;
-    background: #eef1ff !important;
+.owcpc_input__wrapper{
+    padding-top: 60px;
+}
+.owcpc_action-btn__wrapper{
+    top: 15px;
+}
+.ha-chat-window{
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+.ha-chatbubble{
+    font-size: 16px;
 }
 
 .ha-chatbubble-client {
@@ -38,6 +82,38 @@
     margin-left: 10px;
     align-self: flex-start;
 }
+.ha-chatbubble-agent a{
+    color: #000 !important;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px){
+    .ha-chatbubble-client{
+        max-width: 90%;
+        flex-grow:0.8;
+    }
+}
+
+.ha-chatbubble-icon img{
+    width: 20px !important;
+    padding-top: 6px !important;
+}
+.owcp_chat-input.is-loading{
+    background: linear-gradient(270deg, #f3f4f6, #e2e8f0, #f3f4f6);
+    background-size: 400% 400%;
+    animation: pulseGradient 2s ease infinite;
+    resize: vertical;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.owcp_chat-input.is-loading .owcp_btn{
+    background-color:transparent;
+    border-color: transparent;
+    color: #b7b8bb;
+}
+.owcp_chat-input textarea:disabled{
+    background-color: transparent;
+}
+
 
 .agaurd-vault-body #lbr-header {
     margin-bottom: 40px;

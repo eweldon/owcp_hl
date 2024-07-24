@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: H&A CRM Child Plugin
+ * Plugin Name: HL CRM Child Plugin
  * Plugin URI: https://ow.consulting
  * Description: Hepworth HL AI Tenant Portal Child Plugin
  * Version: 1.0
@@ -42,7 +42,7 @@ include 'templates/chat-element.php';
 include 'templates/ai_step.php';
 
 register_activation_hook(__FILE__, 'owcp_ha_on_plugin_activate');
-define('OWCP_LOGO_URL', 'https://www.hepworthlegal.com/wp-content/uploads/2023/01/hepworth-logo-updated.svg');
+define('OWCP_LOGO_URL', 'https://www.hepworthlegal.com/wp-content/uploads/2023/07/HEP_Primary-HZ_Black.png');
 
 // define base path
 define('OWCP_HA_BASE_PATH', plugin_dir_path(__FILE__));

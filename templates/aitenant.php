@@ -36,9 +36,9 @@ $action_buttons = array(
 
 ?>
 
-<div class="pb-5">
+<div class="pb-5 mt-n4">
             <?php render_progress_bar(3) ?>
-        <div class="mt-5 owcpc_container">
+        <div class="mt-3 owcpc_container">
             <div class="owcpc_divider"><p><span>Chat</span></p></div>
             <div class="ha-chat-window rounded p-3">
                 <?php
