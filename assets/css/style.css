@@ -1,0 +1,326 @@
+/*******************
+ HEADER NAV
+*******************/
+#field_45_37 .gchoice{
+    width: 33%;
+    display: inline-block;
+}
+/* a {
+    color: #e60c0c;
+} */
+
+.agaurd-vault-body {
+    padding: 0 0 100px !important;
+    background: #eef1ff !important;
+}
+
+.ha-chatbubble-client {
+    background-color: #2b2b2b; /* dark color for user messages */
+    color: white;
+    max-width: 60%;
+    margin-right: 10px;
+    align-self: flex-end;
+}
+
+.ha-chat-message-select {
+    border-radius: 15px; /* Adjust as needed */
+    width: 50%; /* Adjust as needed */
+    /* add rounded corners */
+    border-radius: 15px;
+    /* add padding */
+    padding: 10px;
+}
+
+.ha-chatbubble-agent {
+    background-color: #f1f1f1; /* or any other color you prefer for agent messages */
+    color: black;
+    max-width: 60%;
+    margin-left: 10px;
+    align-self: flex-start;
+}
+
+.agaurd-vault-body #lbr-header {
+    margin-bottom: 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.agaurd-vault-body #lbr-header .et_menu_container {
+    max-width: 700px;
+}
+
+.agaurd-vault-body .logo_container.clearfix {
+    position: relative;
+    padding: 20px 0;
+}
+
+.agaurd-vault-body .logo_container.clearfix a {
+    display: block;
+}
+
+.agaurd-vault-body #et-top-navigation {
+    float: none !important;
+    max-width: 700px;
+    margin: 0px auto 30px;
+}
+
+.agaurd-vault-body #top-menu-nav {
+    float: none !important;
+}
+
+.agaurd-vault-body #top-menu-nav #top-menu {
+    float: none !important;
+    display: block !important;
+}
+
+.agaurd-vault-body .agaurd-vault-body_overlay {
+    display: none !important;
+}
+
+.agaurd-vault-body .aguard-vault-wrapper {
+    border: 1px solid #cfcfcf;
+}
+
+.agaurd-vault-body #top-menu li {
+    padding-right: 10px !important;
+}
+
+.agaurd-vault-body #top-menu li a {
+    color: #888888 !important;
+    display: block;
+    padding: 15px 20px !important;
+    line-height: 12px;
+    border: 2px solid transparent;
+}
+
+.agaurd-vault-body #top-menu li a:hover {
+    color: #000000 !important;
+}
+
+.agaurd-vault-body #top-menu li.active a {
+    color: #000000 !important;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #cfcfcf;
+}
+
+/*******************
+ STEPS TO ENGAGE PAGE
+*******************/
+
+.lbr_academy-section-wrapper {
+    max-width: 700px;
+    margin: auto;
+    width: 90%;
+}
+
+
+.lbr_academy-section {
+    margin: 30px auto;
+    padding: 20px 30px 5px 30px;
+    background: #ffffff;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 10px 15px rgb(0 0 0 / 4%) !important;
+    -moz-box-shadow: 0 10px 15px rgba(0, 0, 0, .04) !important;
+    box-shadow: 0 10px 15px rgb(0 0 0 / 4%) !important;
+}
+
+/* .lbr_academy-block {
+    background: #ffffff;
+    padding: 0px 20px 0px 50px;
+    margin-bottom: 25px;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid #cfcfcf;
+} */
+
+/* .lbr_academy-block--icon {
+    position: absolute;
+    top: 15px;
+    left: 13px;
+}
+
+.lbr_academy-block--body-head {
+    padding: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 15px 0;
+}
+
+.lbr_academy-block--body-content {
+    font-weight: 500;
+    display: none;
+} */
+
+.aguard-toggle-content .ul-list {
+    list-style: unset;
+    padding: 8px 16px;
+    line-height: 1.8;
+}
+
+.aguard-toggle-content .social-list a {
+    border: 1px solid;
+    padding: 8px 12px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-top: 16px;
+    font-size: 16px;
+}
+
+/* 
+.lbr_academy-block--body-content .btn {
+    margin: 15px 0 5px;
+    background: #7fb24d;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: 1px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+} */
+
+/* .lbr_academy-block-important .lbr_academy-block--body-content {
+    display: block !important;
+} */
+
+.lbr_academy-block--extra {
+    margin: 10px 0 20px;
+    display: block;
+}
+
+image.lbr_academy-block--extra,
+iframe.lbr_academy-block--extra {
+    border-radius: 4px;
+    border-left: 1px solid #cfcfcf;
+}
+
+
+
+.aguard-profile-card {
+    /* display: flex; */
+}
+
+.aguard-profile-card_image {
+    float: left;
+}
+
+.aguard-profile-card_image img {
+    display: block;
+    border-radius: 4px;
+    width: 137px;
+    min-width: 137px;
+    margin-right: 15px;
+}
+
+.aguard-profile-card_bio p {
+    padding-bottom: 8px;
+}
+
+.steps_breadcrumbs {
+	display: flex;
+	padding-top: 60px;
+    padding-left: 0;
+	margin: 0 auto 40px;
+}
+.steps_breadcrumbs-item {
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+.steps_breadcrumbs-item a:not([disabled]) {
+	color: #8E8D8D;
+}
+.steps_breadcrumbs-item a[disabled], .steps_breadcrumbs-item:hover a[disabled] {
+	color: #8E8D8D;
+	cursor: not-allowed;
+}
+.steps_breadcrumbs-item.active a, .steps_breadcrumbs-item:hover a:not([disabled]) {
+	color: #9f2e2e;
+	font-weight: bold;
+}
+.steps_breadcrumbs-item:before, .steps_breadcrumbs-item:after {
+	content: '';
+	width: 20px;
+	height: 20px;
+	border-radius: 40px;
+	background: #ad1f28;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	top: -30px;
+	margin-left: -10px;
+}
+.steps_breadcrumbs-item.active:before {
+	background: #9f2e2e;
+	z-index: 2;
+}
+.steps_breadcrumbs-item:after {
+	width: 100%;
+	height: 7px;
+	top: -23px;
+	margin-left: -1px;
+}
+.steps_breadcrumbs-item:last-child:after {
+	content: none;
+}
+
+@media (max-width: 700px) {
+	.steps_breadcrumbs {
+		display: block;
+		padding-top: 0px;
+	}
+	.steps_breadcrumbs-item {
+		text-align: left;
+		padding: 8px 30px;
+	}
+	.steps_breadcrumbs-item:before, .steps_breadcrumbs-item:after {
+		left: 10px;
+	}
+	.steps_breadcrumbs-item:before, .steps_breadcrumbs-item:after {
+		left: 10px;
+		top: 13px;
+	}
+	.steps_breadcrumbs-item:after {
+		margin-left: -3px;
+		height: 60px;
+		width: 7px;
+	}
+}
+.aguard-loading-wrapper {
+	position: absolute;
+	/* display: flex; */
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: rgba(255,255,255,0.75);
+}
+.aguard-loading-wrapper svg {
+	margin: 100px auto 0px;
+	background: none;
+	display: block;
+	shape-rendering: auto;
+	width: 100%;
+}
+.aguard-submit-wrapper img {
+	display: none;
+	width: 30px;
+    height: 30px;
+    margin: 15px;
+    vertical-align: middle;
+}
+.aguard-submit-wrapper input[disabled] {
+	background: #aaaaaa !important;
+	cursor: not-allowed !important;
+}
+.aguard-submit-wrapper.disabled img {
+	display: inline-block;
+}
+.aguard-loading-wrapper p {
+	text-align: center;
+    padding: 0px 50px;
+}
