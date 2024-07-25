@@ -29,6 +29,22 @@
         if (tab == 'aisolution') {
             window.scrollTo(0, document.body.scrollHeight);
         }
+        /*
+        * Set it to auto scroll to the last message sesnt
+        */
+        function scrollToLastChatBubble() {
+            var chatWindow = $('.ha-chat-window');
+            var lastChatBubble = chatWindow.find('.ha-chatbubble__wrapper:last-child');
+            console.log(lastChatBubble);
+            if (lastChatBubble.length) {
+                
+                chatWindow.scrollTop(lastChatBubble.offset().top - chatWindow.offset().top + chatWindow.scrollTop());
+            }
+        }
+
+        if( $('.ha-chat-window').length > 0 ){
+            scrollToLastChatBubble();
+        }
 
         /**
          * Handles the form submission for the chat input.
@@ -118,7 +134,7 @@
 
 
             chatWindow.append(messageDiv);
-
+            scrollToLastChatBubble();
             // Set the chat input to "A message has been sent. Please wait for a response."
             $('#chat-input').val('A message has been sent. Please wait for a response.');
 
