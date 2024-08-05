@@ -87,7 +87,8 @@
          * If the user presses the enter key, it triggers a popup confirmation, if the user confirms, it submits the form.
          */
         $('#chat-input').on('keypress', function (e) {
-            if (e.which === 13) {
+            // dont submit on shift + enter
+            if (e.which === 13 && !e.shiftKey) {
                 e.preventDefault();
                 // push a confirm dialog
                 var confirmSubmit = confirm("Are you sure you want to submit this message?\nPress ENTER or click OK to confirm.");
@@ -188,7 +189,7 @@
                 $('#chat-input').val(statusMessages[messageIndex]);
                 messageIndex = (messageIndex + 1) % statusMessages.length;
                 checkForUpdates();
-            }, 5 * 1000);
+            }, 3 * 1000);
 
             setTimeout(function () {
                 clearInterval(statusInterval);
