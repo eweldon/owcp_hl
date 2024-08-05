@@ -10,6 +10,8 @@
             'Gathering expert opinions...',
         ];
 
+        var statusMessagesAiReviewing = 'Our AI is reviewing and generating a response, this can take up to 10 seconds...';
+
         // Counter to cycle through status messages
         var messageIndex = 0;
 
@@ -19,31 +21,31 @@
         // if tab = "aireviewing" then run check for updates every 10 seconds
         var tab = urlParams.get('tab');
         if (tab === 'aireviewing') {
+            var currSecond = 10;
             //pass new url into checkForUpdates function, while checking for updates every 10 seconds
             setInterval(function () {
                 var newUrl = window.location.href.replace('tab=aireviewing', 'tab=aisolution');
                 checkForUpdates(newUrl);
+                // set chat-input value to be a list of messages
+                $('#chat-input').val(statusMessagesAiReviewing);
             }, 10 * 1000);
+
+            // every 1 second, update the chat-input value to be a countdown
+            var counter = setInterval(function () {
+                $('#chat-input').val(statusMessagesAiReviewing + ' ' + currSecond + ' seconds remaining...');
+                currSecond -= 1;
+
+                if (currSecond < 0) {
+                    currSecond = 10;
+                    statusMessagesAiReviewing = "This is taking longer than expected. Please wait a moment...";
+                }
+            }, 1 * 1000);
         }
 
         if (tab == 'aisolution') {
             window.scrollTo(0, document.body.scrollHeight);
-        }
-        /*
-        * Set it to auto scroll to the last message sesnt
-        */
-        function scrollToLastChatBubble() {
-            var chatWindow = $('.ha-chat-window');
-            var lastChatBubble = chatWindow.find('.ha-chatbubble__wrapper:last-child');
-            console.log(lastChatBubble);
-            if (lastChatBubble.length) {
-                
-                chatWindow.scrollTop(lastChatBubble.offset().top - chatWindow.offset().top + chatWindow.scrollTop());
-            }
-        }
-
-        if( $('.ha-chat-window').length > 0 ){
-            scrollToLastChatBubble();
+            // on firefox, inputs can be filled in from the previous page, so we need to clear the input
+            $('#chat-input').val('');
         }
 
         /**
@@ -61,6 +63,43 @@
                 return;
             }
             sendChatMessage(message, 'text');
+        });
+
+        /*
+        * Set it to auto scroll to the last message sesnt
+        */
+        function scrollToLastChatBubble() {
+            var chatWindow = $('.ha-chat-window');
+            var lastChatBubble = chatWindow.find('.ha-chatbubble__wrapper:last-child');
+            console.log(lastChatBubble);
+            if (lastChatBubble.length) {
+
+                chatWindow.scrollTop(lastChatBubble.offset().top - chatWindow.offset().top + chatWindow.scrollTop());
+            }
+        }
+
+        if ($('.ha-chat-window').length > 0) {
+            scrollToLastChatBubble();
+        }
+
+
+        /**
+         * If the user presses the enter key, it triggers a popup confirmation, if the user confirms, it submits the form.
+         */
+        $('#chat-input').on('keypress', function (e) {
+            if (e.which === 13) {
+                e.preventDefault();
+                // push a confirm dialog
+                var confirmSubmit = confirm("Are you sure you want to submit this message?\nPress ENTER or click OK to confirm.");
+                if (confirmSubmit) {
+                    var message = $('#chat-input').val();
+                    if (message === '') {
+                        return;
+                    }
+                    sendChatMessage(message, 'text');
+                }
+
+            }
         });
 
         /**
@@ -128,18 +167,18 @@
         function handleSubmission($message) {
             // append the message to the chat window
             var chatWindow = $('.ha-chat-window');
-            
+
             // paramterize the above html string with message
             var messageDiv = `<div class="d-flex justify-content-end mb-4 ha-chatbubble__wrapper" usergroup="user"><span class="ha-chatbubble-icon"><i class="fa-regular fa-user" aria-hidden="true"></i></span><div class="p-2 rounded ha-chatbubble ha-chatbubble-client">${$message}</div></div>`;
 
-
-            chatWindow.append(messageDiv);
             scrollToLastChatBubble();
+            
+            chatWindow.append(messageDiv);
+
             // Set the chat input to "A message has been sent. Please wait for a response."
             $('#chat-input').val('A message has been sent. Please wait for a response.');
 
             // Disable the chat input and the submit button
-            $('#chat-form').addClass('is-loading');
             $('#chat-input').prop('disabled', true);
             $('#chat-submit').prop('disabled', true);
 
@@ -185,11 +224,13 @@
                     access_token: access_token
                 },
                 success: function (response) {
-
                     if (response == "true") {
                         // if $urlParams is not empty, redirect to the new url
+                        $('#chat-input').val('Your reply is ready! Reloading the page...');
                         if ($urlParams) {
                             window.location.href = $urlParams;
+                            // remove interval
+                            clearInterval(counter);
                         } else {
                             // if $urlParams is empty, reload the page
                             location.reload();
